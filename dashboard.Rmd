@@ -14,7 +14,6 @@ library(plotly)
 data("ny_noaa")
 ```
 
-## Column {data-width="650"}
 ```{r}
 ny_10000 = ny_noaa %>%
   filter(!is.na(prcp), !is.na(snow), !is.na(snwd), !is.na(tmax), !is.na(tmin)) %>%
@@ -32,7 +31,8 @@ ny_10000 = ny_noaa %>%
     .groups = 'drop'
   )
 ```
-
+Column {data-width=650}
+-----------------------------------------------------------------------
 ### Chart 1
 
 ```{r}
@@ -55,7 +55,8 @@ ny_1 = plot_ly(
 ny_1
 ```
 
-## Column {data-width="350"}
+Column {data-width=350}
+-----------------------------------------------------------------------
 
 ### Chart 2
 
