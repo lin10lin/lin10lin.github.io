@@ -4,7 +4,6 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
 
@@ -12,6 +11,10 @@ output:
 
 ## Basic Information
 I'm a MS Biostatistics student in Columbia University focusing on Data Science track.
+
+## links
+
+[resume](Resume.html)
 
 ## Hobbies
 
@@ -23,4 +26,5 @@ Hiking is relaxing:
 
 Cycling downhill is exciting but dangerous:
 ![](images/cycling.jpg)
+
 
