@@ -1,0 +1,26 @@
+---
+title: "ZHAOKUN LIN's website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+
+# This is ZHAOKUN LIN's website.
+
+## Basic Information
+I'm a MS Biostatistics student in Columbia University focusing on Data Science track.
+
+## Hobbies
+
+I love playing football:
+![](images/football.jpg)
+
+Hiking is relaxing:
+![](images/hiking.jpg)
+
+Cycling downhill is exciting but dangerous:
+![](images/cycling.jpg)
+
