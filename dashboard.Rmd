@@ -1,0 +1,101 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+data("ny_noaa")
+```
+
+## Column {data-width="650"}
+```{r}
+ny_10000 = ny_noaa %>%
+  filter(!is.na(prcp), !is.na(snow), !is.na(snwd), !is.na(tmax), !is.na(tmin)) %>%
+  group_by(id) %>%
+  filter(n() > 10000) %>%
+  mutate(date = as.Date(date)) %>%
+  mutate(year = year(date), month = month(date, label = TRUE)) %>%
+  group_by(id, year, month) %>%
+  summarise(
+    mean_prcp = mean(prcp, na.rm = TRUE),
+    mean_snow = mean(snow, na.rm = TRUE),
+    mean_snwd = mean(snwd, na.rm = TRUE),
+    mean_tmax = mean(as.numeric(tmax), na.rm = TRUE),
+    mean_tmin = mean(as.numeric(tmin), na.rm = TRUE),
+    .groups = 'drop'
+  )
+```
+
+### Chart 1
+
+```{r}
+ny_1 = plot_ly(
+  data = ny_10000,
+  x = ~mean_tmin,
+  y = ~mean_tmax,
+  color = ~mean_prcp,
+  type = "scatter",
+  colors = "viridis",
+  text = ~mean_prcp,
+  alpha = 0.4
+) %>%
+  layout(
+    title = "mean_tmax vs mean_tmin",
+    xaxis = list(title = "mean_tmin"),
+    yaxis = list(title = "mean_tmax")
+  )
+
+ny_1
+```
+
+## Column {data-width="350"}
+
+### Chart 2
+
+```{r}
+ny_id = ny_10000 %>%
+  summarise(mean_snow = mean(mean_snow), .by = id) %>%
+  arrange(mean_snow) %>%
+  pull(id)
+
+ny_2 = ny_10000 %>%
+  mutate(id = factor(id, levels = ny_id)) %>%
+  plot_ly(x = ~id, y = ~mean_snow, color = ~id, type = "box", colors = "viridis") %>%
+  layout(
+    title = "average snowfall by id",
+    xaxis = list(title = "ID"),
+    yaxis = list(title = "Average snowfall (mm)")
+  )
+
+ny_2
+```
+
+### Chart 3
+```{r}
+ny_sum = ny_10000 %>%
+  summarise(sum_snwd = sum(mean_snwd), .by = id) %>%
+  arrange(sum_snwd)
+
+ny_3 = plot_ly(
+  data = ny_sum,
+  x = ~fct_reorder(id, sum_snwd),
+  y = ~sum_snwd,
+  color = ~id,
+  type = "bar",
+  colors = "viridis"
+) %>%
+  layout(
+    title = "total snow depth by id",
+    xaxis = list(title = "ID"),
+    yaxis = list(title = "Total snow depth (mm)")
+  )
+
+ny_3
+```

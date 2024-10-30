@@ -1,19 +1,18 @@
 ---
-title: "My awesome website"
+title: "My website"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is ZHAOKUN LIN's website.
-
 ## Basic Information
 I'm a MS Biostatistics student in Columbia University focusing on Data Science track.
 
-## links
+## Links
 
 [resume](Resume.html)
+[dashboard](dashboard.html)
 
 ## Hobbies
 
