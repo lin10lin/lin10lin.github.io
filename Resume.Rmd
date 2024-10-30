@@ -6,3 +6,35 @@ output:
     toc_float: true
     theme: cerulean
 ---
+
+## EDUCATION
+
+**Columbia University, Mailman School of Public Health** <span style="float: right; font-weight: bold;">New York, NY</span>
+
+MS in Biostatistics <div style="text-align: right; float: right;">expected May, 2026</div>
+
+-   Coursework: Data science, Probability, Biostatistic method, Epidemiology
+
+**Beijing Normal University** <span style="float: right; font-weight: bold;">Beijing, China</span>
+
+BS in Mathematics    <div style="text-align: right; float: right;">Jun, 2024</div>
+
+- Coursework: Mathematics Analysis, Linear Algebra, Real Analysis
+
+
+## SKILL
+- R, MATLAB, Python, LaTeX, C, Eviews, STATA
+
+
+## Work experience
+
+**Sinolink Securities (Intern)** <span style="float: right; font-weight: bold;">
+Jun, 2023 - Sep, 2023</div>
+
+- Reviewed the payment status of the procurement side of the project according to the company’s bank statements and accounts payable ledger, paid attention to whether the company has external capital circulation, and checked whether there is a relationship between customers and suppliers;
+- Wrote the first draft of the due diligence report of Beijing GraceLaser Technology Co., LTD;
+- Reviewed the institutional documents of governance of a listed company (Beijing Jiuzhouyigui Environmental Technology Co., LTD.), and examined whether the governance structure is missing or unreasonable
+
+
+
+
